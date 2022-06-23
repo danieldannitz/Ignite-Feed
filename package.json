@@ -1,8 +1,8 @@
 {
+  "homepage": "https://danieldannitz.github.io/ignite-feed/",
   "name": "ignite-feed",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://danieldannitz.github.io/ignite-feed/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
