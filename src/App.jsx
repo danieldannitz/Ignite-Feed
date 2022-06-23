@@ -16,7 +16,6 @@ export function App() {
             author="Daniel Menezes"
             content="lorem Ipsum dolor sit amet, consectetur adipiscing elit lorem Ipsum dolor sit amet, consectetur adipiscing elitlorem Ipsum dolor sit amet, consectetur adipiscing elitlorem Ipsum dolor sit amet, consectetur adipiscing elit"
           />
-          <Post author="Ronaldinho Gaúcho" content="novo texto" />
         </main>
       </div>
     </div>
