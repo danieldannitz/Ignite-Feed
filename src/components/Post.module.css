@@ -1,7 +1,5 @@
 .post {
   background-color: var(--gray-800);
-  width: 52rem;
-  height: 40rem;
   padding: 2.5rem;
   border-radius: 0.5rem;
 }
