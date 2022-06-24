@@ -11,7 +11,7 @@ export function Post() {
           />
           <div className={styles.authorInfo}>
             <strong>Carpincho da Silva</strong>
-            <span>Web Developer</span>
+            <span>Nadador</span>
           </div>
         </div>
         <time title="23 de Junho de 2022 às 18:04" dateTime="2022-06-23">
@@ -35,6 +35,11 @@ export function Post() {
           <a href=""> #capivara</a>
         </p>
       </div>
+      <form className={styles.commentForm}>
+        <strong>Deixe seu feedback</strong>
+        <textarea placeholder="Deixe um comentário" />
+        <button type="submit">Publicar</button>
+      </form>
     </article>
   );
 }
