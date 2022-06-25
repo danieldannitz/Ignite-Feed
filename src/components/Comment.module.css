@@ -81,11 +81,11 @@
 
 .authorAndTime strong {
   font-size: 0.875rem;
-  line-heiht: 1.6;
+  line-height: 1.6;
 }
 
 .authorAndTime time {
   font-size: 0.75rem;
-  line-heiht: 1.6;
+  line-height: 1.6;
   color: var(--gray-400);
 }
