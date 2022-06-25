@@ -1,5 +1,5 @@
-import { Comment } from "./Comment";
 import { Avatar } from "./Avatar";
+import { Comment } from "./Comment";
 
 import styles from "./Post.module.css";
 
