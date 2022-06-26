@@ -10,7 +10,7 @@ export function SideBar() {
         src="https://images.unsplash.com/photo-1631815087668-d039e9ead82f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=500&q=50"
       />
       <div className={styles.profile}>
-        <Avatar src="https://github.com/maykbrito.png" />
+        <Avatar src="https://github.com/danieldannitz.png" />
         <strong>Carpincho da Silva</strong>
         <span>Nadador</span>
       </div>
