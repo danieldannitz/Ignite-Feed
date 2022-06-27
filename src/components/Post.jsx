@@ -3,7 +3,8 @@ import { Comment } from "./Comment";
 
 import styles from "./Post.module.css";
 
-export function Post() {
+export function Post(props) {
+  console.log(props);
   return (
     <article className={styles.post}>
       <header>
@@ -21,23 +22,7 @@ export function Post() {
           Publicado há 1h
         </time>
       </header>
-      <div className={styles.content}>
-        <p>Loooo Reem 👋 </p>
-        <p>
-          Anim laborum dolore amet nostrud laboris occaecat adipisicing. Commodo
-          anim laborum sit sit excepteur. Excepteur est proident aliquip anim
-          eiusmod proident. Irure tempor et cupidatat id ipsum excepteur
-          cupidatat labore velit eu non ad laboris.
-        </p>
-        <p>
-          <a href=""> 👉 carpincho.com</a>
-        </p>
-        <p>
-          <a href=""> #novoprojeto</a>
-          <a href=""> #carpincho</a>
-          <a href=""> #capivara</a>
-        </p>
-      </div>
+      <div className={styles.content}></div>
       <form className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
         <textarea placeholder="Deixe um comentário" />
