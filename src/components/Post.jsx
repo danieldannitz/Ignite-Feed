@@ -59,7 +59,7 @@ export function Post({ author, publishedAt, content }) {
         <button type="submit">Publicar</button>
       </form>
       <div className={styles.commentList}>
-        {comments.map((comment) => {
+        {comments.map(() => {
           return <Comment />;
         })}
       </div>
