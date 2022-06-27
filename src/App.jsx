@@ -41,7 +41,7 @@ const posts = [
       },
       { type: "link", content: "👉 carpincho.com" },
     ],
-    publishedAt: new Date("2022-06-30 20:13"),
+    publishedAt: new Date("2022-06-25 20:13"),
   },
 ];
 

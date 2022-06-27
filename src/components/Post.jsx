@@ -1,28 +1,48 @@
+import { format, formatDistanceToNow } from "date-fns";
+import ptBR from "date-fns/esm/locale/pt-BR/index.js";
+
 import { Avatar } from "./Avatar";
 import { Comment } from "./Comment";
 
 import styles from "./Post.module.css";
 
-export function Post(props) {
-  console.log(props);
+export function Post({ author, publishedAt, content }) {
+  const dateFormat = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
+    locale: ptBR,
+  });
+
+  const postDistanceToNow = formatDistanceToNow(publishedAt, {
+    locale: ptBR,
+    addSuffix: true,
+  });
+
   return (
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <Avatar
-            hasBorder={true}
-            src="https://i.pinimg.com/736x/04/a5/1e/04a51e3a2263f59b0b71d9fac9ab2ae0--animal-portraits-portrait-art.jpg"
-          />
+          <Avatar hasBorder={true} src={author.avatarUrl} />
           <div className={styles.authorInfo}>
-            <strong>Carpincho da Silva</strong>
-            <span>Nadador</span>
+            <strong>{author.name}</strong>
+            <span>{author.role}</span>
           </div>
         </div>
-        <time title="23 de Junho de 2022 às 18:04" dateTime="2022-06-23">
-          Publicado há 1h
+        <time title={dateFormat} dateTime={publishedAt.toISOString()}>
+          {postDistanceToNow}
         </time>
       </header>
-      <div className={styles.content}></div>
+      <div className={styles.content}>
+        {content.map((comment) => {
+          if (comment.type === "paragraph") {
+            return <p>{comment.content}</p>;
+          } else if (comment.type === "link") {
+            return (
+              <p>
+                <a href="#">{comment.content}</a>
+              </p>
+            );
+          }
+        })}
+      </div>
       <form className={styles.commentForm}>
         <strong>Deixe seu feedback</strong>
         <textarea placeholder="Deixe um comentário" />
