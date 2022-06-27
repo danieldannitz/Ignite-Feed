@@ -11,8 +11,8 @@ export function SideBar() {
       />
       <div className={styles.profile}>
         <Avatar src="https://github.com/danieldannitz.png" />
-        <strong>Carpincho da Silva</strong>
-        <span>Nadador</span>
+        <strong>Daniel Menezes</strong>
+        <span>Front-end Dev</span>
       </div>
       <footer>
         <a href="#">
