@@ -11,14 +11,6 @@ import styles from "./Post.module.css";
 export function Post({ author, publishedAt, content }) {
   const [comments, setComments] = useState(["Comentário bacana, hein?!"]); //useState vai receber o array de comments, setComments fica responsável por atualizar comments quando o mesmo for alterado
   const [newCommentText, setNewCommentText] = useState("");
-
-  function handleNewComment() {
-    event.preventDefault(); //previne a atualização por padrão do react
-
-    setComments([...comments, newCommentText]);
-    setNewCommentText(""); // após a inserção do comentario, volta para o valor inicial
-  }
-
   const dateFormat = format(publishedAt, "d 'de' LLLL 'às' HH:mm'h'", {
     locale: ptBR,
   });
@@ -28,9 +20,31 @@ export function Post({ author, publishedAt, content }) {
     addSuffix: true,
   });
 
+  function handleNewComment() {
+    event.preventDefault(); //previne a atualização por padrão do react
+
+    setComments([...comments, newCommentText]);
+    setNewCommentText(""); // após a inserção do comentario, volta para o valor inicial
+  }
+
   function handleNewCommentChange() {
+    event.target.setCustomValidity("");
     setNewCommentText(event.target.value);
   }
+
+  function handleNewCommentInvalid() {
+    event.target.setCustomValidity("Esse campo é obrigatório");
+  }
+
+  function deleteComment(commentToDelete) {
+    const commentsWithoutDeletedOne = comments.filter((comment) => {
+      return comment !== commentToDelete;
+    });
+
+    setComments(commentsWithoutDeletedOne);
+  }
+
+  const isNewCommentEmpty = newCommentText.length === 0;
 
   return (
     <article className={styles.post}>
@@ -49,10 +63,10 @@ export function Post({ author, publishedAt, content }) {
       <div className={styles.content}>
         {content.map((comment) => {
           if (comment.type === "paragraph") {
-            return <p>{comment.content}</p>;
+            return <p key={comment.content}>{comment.content}</p>;
           } else if (comment.type === "link") {
             return (
-              <p>
+              <p key={comment.content}>
                 <a href="#">{comment.content}</a>
               </p>
             );
@@ -66,12 +80,22 @@ export function Post({ author, publishedAt, content }) {
           value={newCommentText} //toda vez que o valor mudar, a textarea vai refletir a alteração
           name="comment"
           onChange={handleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
+          required={true}
         />
-        <button type="submit">Publicar</button>
+        <button type="submit" disabled={isNewCommentEmpty}>
+          Publicar
+        </button>
       </form>
       <div className={styles.commentList}>
         {comments.map((comment) => {
-          return <Comment content={comment} />;
+          return (
+            <Comment
+              key={comment}
+              content={comment}
+              onDeleteComment={deleteComment}
+            />
+          );
         })}
       </div>
     </article>
