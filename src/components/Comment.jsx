@@ -18,12 +18,15 @@ export function Comment({ content, onDeleteComment }) {
 
   return (
     <div className={styles.comment}>
-      <Avatar hasBorder={false} src="https://github.com/maykbrito.png" />
+      <Avatar
+        hasBorder={false}
+        src="https://br.web.img3.acsta.net/medias/nmedia/18/95/51/09/20410083.jpg"
+      />
       <div className={styles.commentBox}>
         <div className={styles.commentContent}>
           <header>
             <div className={styles.authorAndTime}>
-              <strong>Mayk Brito</strong>
+              <strong>Ronaldinho Gaúcho</strong>
               <time title="23 de Junho de 2022 às 18:04" dateTime="2022-06-23">
                 Cerca de 1h atrás
               </time>

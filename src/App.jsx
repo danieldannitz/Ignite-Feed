@@ -28,9 +28,10 @@ const posts = [
   {
     id: 2,
     author: {
-      avatarUrl: "https://github.com/maykbrito.png",
-      name: "Mayk Brito",
-      role: "Educator @Rocketseat",
+      avatarUrl:
+        "https://br.web.img3.acsta.net/medias/nmedia/18/95/51/09/20410083.jpg",
+      name: "Ronaldinho Gaúcho",
+      role: "Full-time Bruxo",
     },
     content: [
       { type: "paragraph", content: "Loooo Reem 👋" },
